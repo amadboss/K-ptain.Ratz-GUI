@@ -12,7 +12,6 @@ if (!isset($_SESSION['loggedin'])) {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Central Interface</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
@@ -20,6 +19,7 @@ if (!isset($_SESSION['loggedin'])) {
 		<nav class="navtop">
 			<div>
 				<h1>Kptain-Ratz</h1>
+				<a href="home.php"><i class="icon-dashboard"></i>Dashboard</a>
 				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
@@ -27,6 +27,24 @@ if (!isset($_SESSION['loggedin'])) {
 		<div class="content">
 			<h2>Central Interface</h2>
 			<p>Welcome back, <?=$_SESSION['name']?>!</p>
+			<p>Client N° : <?=$_SESSION['name']?>!</p>
+
+		
+
+
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2">The table header</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>The table body</td>
+					<td>with two columns</td>
+				</tr>
+			</tbody>
+		</table>
 		</div>
 	</body>
 </html>

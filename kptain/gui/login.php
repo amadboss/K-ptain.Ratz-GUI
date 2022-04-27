@@ -34,8 +34,8 @@ print $password;
             $_SESSION['id'] = $id;
             header('Location: /central/home.php');
         } else {
+            header("location:index.html");
             // Incorrect password
-            echo password_hash("admin", PASSWORD_DEFAULT);
             echo 'Incorrect username and/or password!';
         }
     } else {
