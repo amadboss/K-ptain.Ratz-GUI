@@ -18,7 +18,7 @@ if (!isset($_SESSION['loggedin'])) {
 	<body class="loggedin">
 		<nav class="navtop">
 			<div>
-				<h1>Kptain-Ratz</h1>
+				<h1>K-ptain.Ratz</h1>
 				<a href="home.php"><i class="icon-dashboard"></i>Dashboard</a>
 				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
@@ -26,25 +26,39 @@ if (!isset($_SESSION['loggedin'])) {
 		</nav>
 		<div class="content">
 			<h2>Central Interface</h2>
-			<p>Welcome back, <?=$_SESSION['name']?>!</p>
-			<p>Client N° : <?=$_SESSION['name']?>!</p>
+			<p>Logged as : <?=$_SESSION['name']?></p>
 
-		
-
-
-		<table>
-			<thead>
+			<table>
 				<tr>
-					<th colspan="2">The table header</th>
+					<th>Client details</th>
+					<th>ID</th>
+					<th>IP adress (Public)</th>
+					<th>IP adress (Private)</th>
+					<th>OS</th>
+					<th>Last seen user</th>
+					<th>PC Name</th>
 				</tr>
-			</thead>
-			<tbody>
 				<tr>
-					<td>The table body</td>
-					<td>with two columns</td>
+
+					<td><a href="link.html">View details</a></td>
+					<td><img src="/assets/france.png" /></td>
+					<td>89.88.12.8</td>
+					<td>192.168.90.92</td>
+					<td>Windows 10</td>
+					<td>amad</td>
+					<td>AMADBOSS-PC</td>
 				</tr>
-			</tbody>
-		</table>
+				<tr>
+					<td><a href="link.html">View details</a></td>
+					<td><img src="/assets/us.png" /></td>
+					<td>8.8.8.8</td>
+					<td>192.168.1.10</td>
+					<td>Windows 7 SP1</td>
+					<td>Administrator</td>
+					<td>Random-PC</td>
+				</tr>
+			</table>
+
 		</div>
 	</body>
 </html>
