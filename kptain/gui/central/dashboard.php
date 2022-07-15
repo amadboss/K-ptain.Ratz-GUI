@@ -24,11 +24,57 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-//<?php
-//require '../caca.php';
-//$first = requet()[0];
-//print_r($first['name']);
-//?>  
+
+<?php
+function conn() 
+{
+try{
+    $pdo = new PDO('sqlite:'.dirname(__FILE__).'/datasave.db');
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // ERRMODE_WARNING | ERRMODE_EXCEPTION | ERRMODE_SILENT
+} catch(Exception $e) {
+    echo "Impossible d'accéder à la base de données SQLite : ".$e->getMessage();
+    die();
+}
+return $pdo;
+}
+?>
+
+<?php
+
+function requet1()
+{
+$pdo = conn();
+$stmt = $pdo->prepare('SELECT * FROM user where id = 1');
+$stmt->execute();
+return $stmt->fetchAll();
+}
+
+function requet2()
+{
+$pdo = conn();
+$stmt = $pdo->prepare('SELECT * FROM user where id = 2');
+$stmt->execute();
+return $stmt->fetchAll();
+}
+
+function requet3()
+{
+$pdo = conn();
+$stmt = $pdo->prepare('SELECT * FROM user where id = 3');
+$stmt->execute();
+return $stmt->fetchAll();
+}
+
+function requet4()
+{
+$pdo = conn();
+$stmt = $pdo->prepare('SELECT * FROM user where id = 4');
+$stmt->execute();
+return $stmt->fetchAll();
+}
+
+?>  
 
 <body>
     <!--[if lt IE 8]>
@@ -169,11 +215,11 @@
                                                 </td>
                                                 
                                                 
-                                                <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php require '../function.php'; $first = requet1()[0]; print_r($first['name']); ?> </a </td>
+                                                <td class="computer-name"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"><?php $first = requet1()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet1()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip">192.168.1.121 </td>
+                                                <td class="local-ip"></td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen">2 days</td>
+                                                <td class="last-seen"></td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart"></canvas>
                                                 </td>
@@ -184,9 +230,9 @@
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet2()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet2()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip">192.168.1.121 </td>
-                                                <td class="os"><img src="assets/images/icon/dashboard/linux.png" alt="icon"></td>
-                                                <td class="last-seen">51 minutes ago</td>
+                                                <td class="local-ip"></td>
+                                                <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
+                                                <td class="last-seen"></td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart2"></canvas>
                                                 </td>
@@ -197,9 +243,9 @@
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet3()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet3()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip">192.168.1.121 </td>
+                                                <td class="local-ip"></td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen">1 Month ago</td>
+                                                <td class="last-seen"></td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart3"></canvas>
                                                 </td>
@@ -210,9 +256,9 @@
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet4()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet4()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip">192.168.1.121 </td>
+                                                <td class="local-ip"></td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen">2 Hours ago</td>
+                                                <td class="last-seen"></td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart4"></canvas>
                                                 </td>
