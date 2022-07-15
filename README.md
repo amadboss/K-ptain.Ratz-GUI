@@ -29,12 +29,13 @@
 ## K-ptain.Ratz
 
 
-K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust with web GUI made for @ESGI with :
+K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust made for @ESGI with :
 
 * [Rust](https://www.rust-lang.org/fr)
 * [PHP](https://www.php.net/)
 * [Apache2](https://httpd.apache.org/)
 
+This version include the web GUI written in PHP/JavaScript using sqlite3. This project is linked to : https://github.com/Denis-REMACLE/K-ptain.Ratz
 
 
 ### Installation
