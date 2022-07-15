@@ -1,4 +1,4 @@
-# K-ptain.Ratz
+# K-ptain.Ratz-GUI
 <div id="top"></div>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -25,7 +25,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## K-ptain.Ratz
+## K-ptain.Ratz-GUI
 
 
 K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust made for @ESGI with :
