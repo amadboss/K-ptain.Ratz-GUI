@@ -28,13 +28,14 @@
 ## K-ptain.Ratz-GUI
 
 
-K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust made for @ESGI with :
+K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust and made for @ESGI with :
 
 * [Rust](https://www.rust-lang.org/fr)
 * [PHP](https://www.php.net/)
+* [sqlite3](https://www.sqlite.org/download.html)
 * [Apache2](https://httpd.apache.org/)
 
-This version include the web GUI written in PHP/JavaScript using sqlite3. This project is linked to : https://github.com/Denis-REMACLE/K-ptain.Ratz
+This version include the web GUI written in JavaScript and is linked to : https://github.com/Denis-REMACLE/K-ptain.Ratz
 
 
 ### Installation
@@ -42,6 +43,15 @@ This version include the web GUI written in PHP/JavaScript using sqlite3. This p
 1. To install K-ptain.Ratz clone the repo
    ```sh
    git clone https://github.com/Denis-REMACLE/K-ptain.Ratz.git
+   ```
+
+2. Get into the 'k-ptain' directory then simply run the 'install.sh'
+   ```sh
+   chmod +x install.sh
+   ```
+  
+   ```sh
+   ./install.sh
    ```
 
 ## Contributing
