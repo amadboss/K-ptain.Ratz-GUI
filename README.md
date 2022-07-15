@@ -45,7 +45,7 @@ This version include the web GUI written in JavaScript and is linked to : https:
    git clone https://github.com/Denis-REMACLE/K-ptain.Ratz.git
    ```
 
-2. Get into the 'k-ptain' directory then simply run the 'install.sh'
+2. Get into the `k-ptain` directory then simply run the `install.sh`
    ```sh
    chmod +x install.sh
    ```
