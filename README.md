@@ -40,7 +40,7 @@ This version include the web GUI written in JavaScript and is linked to : https:
 
 ### Installation
 
-1. To install K-ptain.Ratz clone the repo
+1. To install `K-ptain.Ratz-GUI` clone the repo
    ```sh
    git clone https://github.com/Denis-REMACLE/K-ptain.Ratz.git
    ```
