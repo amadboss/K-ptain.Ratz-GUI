@@ -24,6 +24,12 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
+//<?php
+//require '../caca.php';
+//$first = requet()[0];
+//print_r($first['name']);
+//?>  
+
 <body>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -161,8 +167,10 @@
                                             <tr>
                                                 <td class="mv-icon"><img src="assets/images/icon/dashboard/eu.png" alt="icon">
                                                 </td>
-                                                <td class="computer-name"><a href="https://github.com/Denis-REMACLE/K-ptain.Ratz">AMAD-PC</a></td>
-                                                <td class="public-ip">86.125.14.2 </td>
+                                                
+                                                
+                                                <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php require '../function.php'; $first = requet1()[0]; print_r($first['name']); ?> </a </td>
+                                                <td class="public-ip"> <?php $first = requet1()[0]; print_r($first['ip']); ?> </td>
                                                 <td class="local-ip">192.168.1.121 </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
                                                 <td class="last-seen">2 days</td>
@@ -174,8 +182,8 @@
                                                 <td class="mv-icon">
                                                     <div class="mv-icon"><img src="assets/images/icon/dashboard/uk.png" alt="icon"></div>
                                                 </td>
-                                                <td class="computer-name"><a href="https://github.com/Denis-REMACLE/K-ptain.Ratz">battlestation</a></td>
-                                                <td class="public-ip">86.125.14.2 </td>
+                                                <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet2()[0]; print_r($first['name']); ?> </a </td>
+                                                <td class="public-ip"> <?php $first = requet2()[0]; print_r($first['ip']); ?> </td>
                                                 <td class="local-ip">192.168.1.121 </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/linux.png" alt="icon"></td>
                                                 <td class="last-seen">51 minutes ago</td>
@@ -187,8 +195,8 @@
                                                 <td class="mv-icon">
                                                     <div class="mv-icon"><img src="assets/images/icon/dashboard/de.png" alt="icon"></div>
                                                 </td>
-                                                <td class="computer-name"><a href="https://github.com/Denis-REMACLE/K-ptain.Ratz">Victim1-W10</a></td>
-                                                <td class="public-ip">86.125.14.2 </td>
+                                                <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet3()[0]; print_r($first['name']); ?> </a </td>
+                                                <td class="public-ip"> <?php $first = requet3()[0]; print_r($first['ip']); ?> </td>
                                                 <td class="local-ip">192.168.1.121 </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
                                                 <td class="last-seen">1 Month ago</td>
@@ -200,8 +208,8 @@
                                                 <td class="mv-icon">
                                                     <div class="mv-icon"><img src="assets/images/icon/dashboard/it.png" alt="icon"></div>
                                                 </td>
-                                                <td class="computer-name"><a href="https://github.com/Denis-REMACLE/K-ptain.Ratz">Victim2-W10</a></td>
-                                                <td class="public-ip">86.125.14.2 </td>
+                                                <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet4()[0]; print_r($first['name']); ?> </a </td>
+                                                <td class="public-ip"> <?php $first = requet4()[0]; print_r($first['ip']); ?> </td>
                                                 <td class="local-ip">192.168.1.121 </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
                                                 <td class="last-seen">2 Hours ago</td>
