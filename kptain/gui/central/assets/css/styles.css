@@ -1,29 +1,3 @@
-/*--------------------------------------------
-
-    Template Name: srtdash - Bootstrap 4 Admin and Ui Kit
-    Template URI: http://tf.itech-theme.com/srtdash-preview
-    Description: This is Bootstrap 4 Admin Template and Ui Kit
-    Author: cdibrandstudio
-    Author https://themeforest.net/user/cdibrandstudio
-    Version: 1.0
-
-----------------------------------------------
-    
-    CSS INDEX
-    ===================
-  
-    1. Core Css
-    2. Dashboard One
-        2.1 Sidebar Menu
-            2.1.1 Horizontal Menu
-        2.2 Header Area
-        2.3 Page Title Area
-        2.4 Fact Area
-        2.5 Overview
-        2.6 Market value
-
-
-/*------------------------- 1. Core Css -------------------*/
 
 .page-container {
     width: 100%;
@@ -55,9 +29,6 @@
     padding: 1.6rem;
 }
 
-.h-full {
-    height: 100%;
-}
 
 .main-content {
     width: 100%;
@@ -69,10 +40,7 @@
 }
 
 /*------------------------- END Core Css -------------------*/
-
-
 /*-------------------- 2.1 Sidebar Menu -------------------*/
-
 .sidebar-menu {
     position: fixed;
     left: 0;
@@ -114,10 +82,10 @@
     background: #303641;
     border-bottom: 1px solid #343e50;
 }
-.sidebar-menu .logo{
+
+.sidebar-menu .logo {
     text-align: center;
 }
-
 
 .logo a {
     text-align: center;
@@ -129,6 +97,7 @@
 .metismenu >li >a {
     padding-left: 32px!important;
 }
+
 .metismenu li a {
     position: relative;
     display: block;
@@ -168,8 +137,7 @@
     margin-left: 10px;
 }
 
-.metismenu li.active>a,
-.metismenu li:hover>a {
+.metismenu li.active>a, .metismenu li:hover>a {
     color: #fff;
 }
 
@@ -181,194 +149,22 @@
     padding-left: 37px;
 }
 
-.metismenu >li:hover>a,
-.metismenu >li.active>a {
+.metismenu >li:hover>a, .metismenu >li.active>a {
     color: #fff;
     background: #343942;
 }
 
-.metismenu li:hover>a,
-.metismenu li.active>a {
+.metismenu li:hover>a, .metismenu li.active>a {
     color: #fff;
 }
 
-.metismenu li:hover>a i,
-.metismenu li.active>a i {
+.metismenu li:hover>a i, .metismenu li.active>a i {
     color: #fff;
 }
 
 .metismenu li li a:after {
     top: 6px;
 }
-
-/*-------------------- END Sidebar Menu -------------------*/
-
-
-/*-------------------- 2.1.1 Horizontal Menu -------------------*/
-
-.body-bg {
-    background: #F3F8FB;
-}
-
-.horizontal-main-wrapper {
-    min-height: 100vh;
-}
-
-.horizontal-main-wrapper .container {
-    max-width: 1440px;
-}
-
-.horizontal-main-wrapper .header-area,
-.horizontal-main-wrapper .mainheader-area {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.horizontal-main-wrapper .main-content-inner {
-    padding: 0 0 50px;
-}
-
-.mainheader-area .notification-area {
-    -webkit-transform: translateY(-11px);
-            transform: translateY(-11px);
-}
-
-.mainheader-area {
-    background: #fff;
-    border-bottom: 1px solid #f3f8fb;
-    padding-left: 15px;
-    position: relative;
-    z-index: 99;
-}
-
-.mainheader-area .logo a span {
-    color: #0b07ee;
-}
-
-.horizontal-menu {
-    position: relative;
-}
-
-.horizontal-menu ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.horizontal-menu ul li a {
-    display: block;
-    font-size: 13px;
-    padding: 10px 20px;
-    color: #000000;
-    text-transform: capitalize;
-}
-
-.horizontal-menu ul li:hover>a,
-.horizontal-menu ul li.active>a {
-    color: #007BFF;
-}
-
-.horizontal-menu nav>ul>li:first-child>a {
-    padding-left: 0;
-}
-
-.horizontal-menu ul li a i {
-    margin-right: 5px;
-}
-
-.horizontal-menu .submenu {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    z-index: 99;
-    width: 200px;
-    background: #fff;
-    opacity: 0;
-    visibility: hidden;
-    border-top: 4px solid #007BFF;
-    border-radius: 3px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
-}
-
-.horizontal-menu .submenu li {
-    display: block;
-}
-
-.horizontal-menu ul li:hover>.submenu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.horizontal-menu .mega-menu {
-    position: inherit;
-}
-
-.horizontal-menu .mega-menu .submenu {
-    width: 100%;
-    max-width: 900px;
-}
-
-.horizontal-menu .mega-menu .submenu li {
-    display: inline-block;
-    width: calc(100% * (1/3) - 5px);
-}
-
-.header-bottom .search-box input {
-    max-width: 350px;
-    width: 100%;
-}
-
-/* mobile menu */
-
-.slicknav_menu {
-    background: #0b07ee;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.slicknav_menu>a {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin: 0;
-    background: transparent;
-}
-
-.slicknav_menu .slicknav_icon {
-    float: right;
-}
-
-.slicknav_menu .slicknav_icon-bar {
-    box-shadow: none;
-}
-
-.slicknav_menu .slicknav_menutxt {
-    font-weight: 500;
-    text-shadow: none;
-}
-
-.slicknav_nav .slicknav_row,
-.slicknav_nav a {
-    text-transform: capitalize;
-}
-
-.slicknav_nav .slicknav_row:hover {
-    border-radius: 0;
-    background: #0b07ee;
-}
-
-.slicknav_nav li i {
-    width: 26px;
-    display: inline-block;
-}
-
-.slicknav_nav .slicknav_item .slicknav_arrow {
-    float: right;
-}
-
-/*-------------------- END Horizontal Menu -------------------*/
-
-
-/*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
     padding: 15px 30px;
@@ -399,12 +195,12 @@
 
 .nav-btn span:first-child {
     -webkit-transform: rotate(45deg)translate(5px, 5px);
-            transform: rotate(45deg)translate(5px, 5px);
+    transform: rotate(45deg)translate(5px, 5px);
 }
 
 .nav-btn span:last-child {
     -webkit-transform: rotate(-45deg)translate(3px, -3px);
-            transform: rotate(-45deg)translate(3px, -3px);
+    transform: rotate(-45deg)translate(3px, -3px);
 }
 
 .sbar_collapsed .nav-btn span {
@@ -431,14 +227,6 @@
     color: #b1a7a7;
 }
 
-.search-box input::-moz-placeholder {
-    color: #b1a7a7;
-}
-
-.search-box input:-ms-input-placeholder {
-    color: #b1a7a7;
-}
-
 .search-box form i {
     position: absolute;
     right: 21px;
@@ -447,14 +235,12 @@
     color: #b1a7a7;
 }
 
-
 /* notification-area */
-
 .notification-area {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     position: relative;
     z-index: 1;
 }
@@ -464,9 +250,9 @@
     margin-left: 20px;
     cursor: pointer;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .notification-area li.settings-btn.active i {
@@ -482,146 +268,14 @@
     transition: color 0.3s ease 0s;
 }
 
-.notification-area li:hover>i,
-.dropdown.show>i {
-    color: var(--primary-color);
-}
-
-.notification-area li i>span {
-    position: absolute;
-    right: -5px;
-    top: -7px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: #fff;
-    background: var(--primary-color);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    padding-left: 2px;
-}
-
-.notify-box {
-    width: 350px;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-}
-
-.notify-title {
-    background: var(--primary-color);
-    display: block;
-    padding: 18px 30px;
-    color: #fff;
-    font-size: 15px;
-    letter-spacing: 0;
-    overflow: hidden;
-}
-
-.notify-title a {
-    float: right;
-    display: inline-block;
-    color: #ffee1d;
-    font-size: 13px;
-    text-decoration: underline;
-}
-
-.nofity-list {
-    padding: 30px 0;
-}
-
-.nofity-list a {
-    padding: 0 30px;
-    display: block;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f5f2f2;
-    padding-bottom: 15px;
-}
-
-.nofity-list a:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.notify-thumb {
-    float: left;
-    margin-right: 20px;
-}
-
-.notify-thumb i {
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    display: block;
-    border-radius: 50%;
-    text-align: center;
-    color: #fff;
-    font-size: 23px;
-}
-
-.notify-text {
-    overflow: hidden;
-}
-
-.notify-text p {
-    font-size: 14px;
-    color: #4e4e4e;
-    line-height: 22px;
-    margin-bottom: 4px;
-}
-
-.notify-text span {
-    letter-spacing: 0;
-    color: #272626;
-    font-size: 11px;
-    font-weight: 300;
-}
-
-/* notify envelope */
-
-.expanded .notification-area li#full-view-exit {
-    display: inline-block;
-}
-
 .notification-area li#full-view-exit {
     display: none;
 }
 
-.expanded .notification-area li#full-view {
-    display: none;
-}
 
 .notification-area li#full-view {
     display: inline-block;
 }
-
-.nt-enveloper-box .notify-text p {
-    margin-bottom: 0;
-}
-
-.notify-text span.msg {
-    display: block;
-    font-size: 12px;
-    color: #4e4e4e;
-    line-height: 22px;
-    margin-bottom: 4px;
-    font-weight: 400;
-}
-
-.notify-thumb img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-top: 4px;
-}
-
-/*-------------------- END Header Area -------------------*/
-
-/*-------------------- 2.3 Page Title Area -------------------*/
 
 .page-title-area {
     padding: 0 30px;
@@ -638,7 +292,7 @@
     height: 36px;
     background: var(--primary-color);
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .page-title {
@@ -657,8 +311,7 @@ ul.breadcrumbs {
     display: inline-block;
 }
 
-.breadcrumbs li a,
-.breadcrumbs li span {
+.breadcrumbs li a, .breadcrumbs li span {
     display: block;
     font-size: 14px;
     font-weight: 400;
@@ -688,10 +341,10 @@ ul.breadcrumbs {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     background: -webkit-linear-gradient(left, #4542e4 0%, #4542e4 100%);
     background: linear-gradient(to right, #4542e4 0%, #4542e4 100%);
     padding: 17px 38px;
@@ -712,9 +365,9 @@ ul.breadcrumbs {
     letter-spacing: 0;
     cursor: pointer;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .user-name i {
@@ -724,22 +377,19 @@ ul.breadcrumbs {
     position: relative;
 }
 
-.notification-area .dropdown-toggle,
-.user-name.dropdown-toggle {
+.notification-area .dropdown-toggle, .user-name.dropdown-toggle {
     position: relative;
 }
 
-.notification-area .dropdown-toggle:after,
-.user-name.dropdown-toggle:after {
+.notification-area .dropdown-toggle:after, .user-name.dropdown-toggle:after {
     display: none;
 }
 
-.notification-area .dropdown-menu,
-.user-profile .dropdown-menu {
+.notification-area .dropdown-menu, .user-profile .dropdown-menu {
     background: #fff;
     border: none;
     -webkit-transform: none!important;
-            transform: none!important;
+    transform: none!important;
     top: 130%!important;
     right: 30px!important;
     left: auto!important;
@@ -748,19 +398,6 @@ ul.breadcrumbs {
     display: block!important;
     visibility: hidden;
     opacity: 0;
-}
-
-.notification-area .dropdown-menu.show,
-.user-profile .dropdown-menu.show {
-    top: 100%!important;
-}
-
-.notification-area .dropdown-menu.show,
-.user-profile .dropdown-menu.show {
-    top: 100%!important;
-    visibility: visible;
-    opacity: 1;
-    box-shadow: 0 0 45px 0 rgba(131, 23, 254, 0.06);
 }
 
 .user-profile .dropdown-menu a {
@@ -772,15 +409,16 @@ ul.breadcrumbs {
     padding-left: 25px;
 }
 
-.user-profile .dropdown-menu a:hover {
-    background: #f8f9fa;
-    color: #2942fa;
+.custome-select {
+    font-size: 13px;
+    color: #565656;
+    font-weight: 500;
+    letter-spacing: 0;
 }
 
-/*-------------------- END Page Title Area -------------------*/
-
-
-/*-------------------- 2.6 Market value ------------------- */
+.border-0 {
+    border: none;
+}
 
 .market-status-table {
     overflow: hidden;
@@ -795,13 +433,13 @@ table.dbkit-table tr {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     height: 71px;
     border: 1px solid transparent;
     padding: 0 30px;
@@ -809,8 +447,7 @@ table.dbkit-table tr {
     background: #f5f8f9;
 }
 
-table.dbkit-table tr th,
-table.dbkit-table tr td {
+table.dbkit-table tr th, table.dbkit-table tr td {
     border-top: none!important;
 }
 
@@ -830,10 +467,6 @@ table.dbkit-table tr td {
     max-width: 29px;
 }
 
-.trends {
-    text-align: center;
-}
-
 .stats-chart {
     text-align: center;
     max-width: 75px;
@@ -842,11 +475,3 @@ table.dbkit-table tr td {
 .stats-chart canvas {
     margin: auto;
 }
-
-.buy img,
-.sell img {
-    margin-left: 10px;
-}
-
-/*-------------------- END Market value ------------------- */
-
