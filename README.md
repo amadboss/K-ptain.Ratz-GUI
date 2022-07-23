@@ -33,7 +33,6 @@ K-ptain.Ratz is a R.A.T (Remote Access Tool) written in Rust and made for @ESGI 
 * [Rust](https://www.rust-lang.org/fr)
 * [PHP](https://www.php.net/)
 * [sqlite3](https://www.sqlite.org/download.html)
-* [Apache2](https://httpd.apache.org/)
 
 This version include the web GUI written in JavaScript and is linked to : https://github.com/Denis-REMACLE/K-ptain.Ratz
 
@@ -53,6 +52,28 @@ This version include the web GUI written in JavaScript and is linked to : https:
    ```sh
    ./install.sh
    ```
+   
+3. In a web browser, go to the login page `(Default : admin:admin` : http://%YOURSERVERIP%/gui/index.php
+
+## Get started
+
+
+The main admin dashboard contains all infected targets and deliver a simple way to manage them :
+
+![dashboard](https://raw.githubusercontent.com/nzkoxzu/K-ptain.Ratz-GUI/main/images/dashboard.png)
+
+
+.This web UI also allow user to use different payloads on the infected node like :
+
+* [Remote Desktop Control session](https://github.com/novnc/noVNC)
+* [Live webcam stream](https//github.com/gen2brain/cam2ip)
+* [Reverse Shell]()
+
+
+## Disclaimer
+
+This project was made for educational purpose only and we do not keep responsibility of any bad usage.
+
 
 ## Contributing
 
